@@ -1,0 +1,99 @@
+﻿
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+.login container-header {
+    margin-top:25%;
+    width: 70%;
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+}
+
+body {
+    background-image: url(https://i.ibb.co/kcvTCkV/background-login-regis.jpg);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.row .card login-logout-tab {
+    background-color: #ffa31a;
+}
+
+.card-content {
+    background-color: #292929;
+}
+
+}
+
+.login-form-icon {
+    background-color: #292929;
+}
+
+.fas fa-user-circle fa-9x text-secondary {
+    background-color: #ffa31a;
+}
+
+.text-secondary {
+    color: #ffa31a !important;
+}
+
+.bg-white {
+    background-color: #292929 !important;
+}
+
+.text-dark {
+    color: white !important;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: darkorange;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+a {
+    color: #fafcff;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #212529;
+    border-color: #1861ac;
+}
+
+label {
+    color: white;
+}
+
+
+.h3, h3 {
+
+    color: white;
+}
+
+.crud-table {
+
+    background-color: gray;
+}
+
+.container-header {
+    background-color: #6b6b6b;
+    font-family: 'Poppins', sans-serif;
+    font-size: 33px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #6b6b6b;
+    border-color: #6b6b6b;
+}

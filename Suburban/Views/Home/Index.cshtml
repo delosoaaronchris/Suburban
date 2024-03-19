@@ -1,0 +1,525 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0 ">
+    <meta http-equiv="X-UA_Compatible" content="IE=edge">
+    <title> SUBURBAN </title>
+    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../css/intro.css">
+    <link rel="stylesheet" type="text/css" href="../css/products.css">
+    <link rel="stylesheet" type="text/css" href="../css/about.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper-bundle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="intro.css">
+
+</head>
+
+<body style="background-color:#111; color:white;">
+
+    <!--------------------------------NAVIGATION BAR--------------------------------->
+    <nav style="padding-left:340px;">
+        <img src="../images/wlogo.png">
+        <ul>
+            <li><a href="#"> Home </a></li>
+            <li><a href="#products"> Products </a></li>
+            <li><a href="#about"> About </a></li>
+        </ul>
+
+        @if (string.IsNullOrWhiteSpace(User.Identity.Name))
+        {
+            <button class="rightNav" style="left:55%"><a href="/Identity/Account/Register">Register</a></button>
+            <button class="rightNav loginbtn" style="left:55%"><a href="/Identity/Account/Login">Login</a></button>
+        }
+        else
+        {
+            <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button id="logout" type="submit" class="rightNav" style="left: 55%">Logout</button>
+            </form>
+        }
+    </nav>
+
+    <!--------------------------------NAVIGATION BAR--------------------------------->
+    <!---intro page--->
+    <section>
+        <div class="circle"></div>
+        <div class="felix">
+            <div class="hello">
+                <h2>
+                    We make IT happen.
+                    <span>SUBURBAN</span>
+                </h2>
+                <p>
+                    SUBURBAN was founded in 2021 by Dani's Angels, who had a passion for technology. SUBURBAN connect vast and diverse region through our technology,
+                    logistics, and payments capabilities. SUBURBAN promotes quality over quantity mentality, so we only sold high-quality product to satisfy the need of our customers.
+                </p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="imgBox">
+                <img src="https://i.ibb.co/BKCPgn4/img1.png" class="starbucks">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="https://i.ibb.co/WBDqYZM/thumb1.png" onclick="imgSlider('https://i.ibb.co/BKCPgn4/img1.png');changeCircleColor('#e57224')"></li>
+            <li><img src="https://i.ibb.co/QMyWjsm/thumb2.png" onclick="imgSlider('https://i.ibb.co/FKTMY7B/img2.png');changeCircleColor('#808080')"></li>
+            <li><img src="https://i.ibb.co/0JV0Zbv/thumb3.png" onclick="imgSlider('https://i.ibb.co/3pHhYyx/img3.png');changeCircleColor('#f33737')"></li>
+
+        </ul>
+
+        <ul class="sci">
+            <li><a href="#"><img src="~/images/facebook.png"></a></li>
+            <li><a href="#"><img src="~/images/twitter.png"></a></li>
+            <li><a href="#"><img src="~/images/instagram.png"></a></li>
+
+
+        </ul>
+    </section>
+
+
+    <script type="text/javascript">
+        function imgSlider(anything) {
+            document.querySelector('.starbucks').src = anything;
+        }
+        function changeCircleColor(color) {
+            const circle = document.querySelector('.circle');
+            circle.style.background = color;
+        }
+    </script>
+
+
+    <!--------------------------------PRODUCT PAGE--------------------------------->
+
+    <section class="productbg">
+        <a href="#" name="products"></a>
+
+        <!--section title---------->
+        <div class="section-title text-center" style="left:50%;">
+            <h2>PRODUCTS</h2>
+            <p>"Only The Best."</p>
+        </div>
+
+        <!--page-icon--------->
+        <link href="https://ibb.co/McQxqxv" rel="shortcut icon" />
+
+        <link href="~/css/products.css" rel="stylesheet" />
+        <!--light-slider.css------------------------------>
+        <link href="~/css/lightslider.css" rel="stylesheet" type="text/css" />
+
+        <!--Jquery------------------------------>
+        <script src="~/js/Jquery.js" type="text/javascript"></script>
+
+        <!--lightslider.js------------------------------>
+        <script src="~/js/lightslider.js" type="text/javascript"></script>
+
+
+
+        <ul id="autoWidth" class="cs-hidden">
+
+            <!--1--------------------------------------->
+            <li class="item-a">
+                <!--box-slider--------->
+                <div class="box">
+                    <!--img-box--------->
+                    <div class="slide-img">
+                        <img src="../images/Product/ASUS ROG 3.png" alt="1" />
+                        <!--overlayer--------->
+                        <div class="overlay">
+                            <!--buy-btn--------->
+                            <a href="#" class="buy-btn">View</a>
+                        </div>
+                    </div>
+                    <!--detail-box--------->
+                    <div class="detail-box">
+                        <!--type--------->
+                        <div class="type">
+                            <a href="#"><hr /></a>
+                            <span><hr /></span>
+                        </div>
+                        <!--price--------->
+                        <a href="#" class="price"><hr /></a>
+                    </div>
+                </div>
+            </li>
+
+            <!--2--------------------------------------->
+            <li class="item-b">
+                <!--box-slider--------->
+                <div class="box">
+                    <!--img-box--------->
+                    <div class="slide-img">
+                        <img src="../images/Product/Black Shark 3 pro.png" alt="1" />
+                        <!--overlayer--------->
+                        <div class="overlay">
+                            <!--buy-btn--------->
+                            <a href="#" class="buy-btn">View</a>
+                        </div>
+                    </div>
+                    <!--detail-box--------->
+                    <div class="detail-box">
+                        <!--type--------->
+                        <div class="type">
+                            <a href="#"><hr /></a>
+                            <span><hr /></span>
+                        </div>
+                        <!--price--------->
+                        <a href="#" class="price"><hr /></a>
+                    </div>
+                </div>
+            </li>
+
+            <!--3--------------------------------------->
+            <li class="item-c">
+                <!--box-slider--------->
+                <div class="box">
+                    <!--img-box--------->
+                    <div class="slide-img">
+                        <img src="../images/Product/iphone 12.png" alt="1" />
+                        <!--overlayer--------->
+                        <div class="overlay">
+                            <!--buy-btn--------->
+                            <a href="#" class="buy-btn">View</a>
+                        </div>
+                    </div>
+                    <!--detail-box--------->
+                    <div class="detail-box">
+                        <!--type--------->
+                        <div class="type">
+                            <a href="#"><hr /></a>
+                            <span><hr /></span>
+                        </div>
+                        <!--price--------->
+                        <a href="#" class="price"><hr /></a>
+                    </div>
+                </div>
+            </li>
+
+            <!--4--------------------------------------->
+            <li class="item-d">
+                <!--box-slider--------->
+                <div class="box">
+                    <!--img-box--------->
+                    <div class="slide-img">
+                        <img src="../images/Product/msi ge66 raider.png" alt="1" />
+                        <!--overlayer--------->
+                        <div class="overlay">
+                            <!--buy-btn--------->
+                            <a href="#" class="buy-btn">View</a>
+                        </div>
+                    </div>
+                    <!--detail-box--------->
+                    <div class="detail-box">
+                        <!--type--------->
+                        <div class="type">
+                            <a href="#"><hr /></a>
+                            <span><hr /></span>
+                        </div>
+                        <!--price--------->
+                        <a href="#" class="price"><hr /></a>
+                    </div>
+                </div>
+            </li>
+
+            <!--5--------------------------------------->
+            <li class="item-e">
+                <!--box-slider--------->
+                <div class="box">
+                    <!--img-box--------->
+                    <div class="slide-img">
+                        <img src="../images/Product/Nubia Red Magic 5G.png" alt="1" />
+                        <!--overlayer--------->
+                        <div class="overlay">
+                            <!--buy-btn--------->
+                            <a href="#" class="buy-btn">View</a>
+                        </div>
+                    </div>
+                    <!--detail-box--------->
+                    <div class="detail-box">
+                        <!--type--------->
+                        <div class="type">
+                            <a href="#"><hr /></a>
+                            <span><hr /></span>
+                        </div>
+                        <!--price--------->
+                        <a href="#" class="price"><hr /></a>
+                    </div>
+                </div>
+            </li>
+
+            <!--6--------------------------------------->
+            <li class="item-f">
+                <!--box-slider--------->
+                <div class="box">
+                    <!--img-box--------->
+                    <div class="slide-img">
+                        <img src="../images/Product/PS5.png" alt="1" />
+                        <!--overlayer--------->
+                        <div class="overlay">
+                            <!--buy-btn--------->
+                            <a href="#" class="buy-btn">View</a>
+                        </div>
+                    </div>
+                    <!--detail-box--------->
+                    <div class="detail-box">
+                        <!--type--------->
+                        <div class="type">
+                            <a href="#"><hr /></a>
+                            <span><hr /></span>
+                        </div>
+                        <!--price--------->
+                        <a href="#" class="price"><hr /></a>
+                    </div>
+                </div>
+            </li>
+
+            <!--7--------------------------------------->
+            <li class="item-g">
+                <!--box-slider--------->
+                <div class="box">
+                    <!--img-box--------->
+                    <div class="slide-img">
+                        <img src="../images/Product/ROG Zephyrus 15.png" alt="1" />
+                        <!--overlayer--------->
+                        <div class="overlay">
+                            <!--buy-btn--------->
+                            <a href="#" class="buy-btn">View</a>
+                        </div>
+                    </div>
+                    <!--detail-box--------->
+                    <div class="detail-box">
+                        <!--type--------->
+                        <div class="type">
+                            <a href="#"><hr /></a>
+                            <span><hr /></span>
+                        </div>
+                        <!--price--------->
+                        <a href="#" class="price"><hr /></a>
+                    </div>
+                </div>
+            </li>
+
+            <!--8--------------------------------------->
+            <li class="item-h">
+                <!--box-slider--------->
+                <div class="box">
+                    <!--img-box--------->
+                    <div class="slide-img">
+                        <img src="../images/Product/Xbox X.png" alt="1" />
+                        <!--overlayer--------->
+                        <div class="overlay">
+                            <!--buy-btn--------->
+                            <a href="#" class="buy-btn">View</a>
+                        </div>
+                    </div>
+                    <!--detail-box--------->
+                    <div class="detail-box">
+                        <!--type--------->
+                        <div class="type">
+                            <a href="#"><hr /></a>
+                            <span><hr /></span>
+                        </div>
+                        <!--price--------->
+                        <a href="#" class="price"><hr /></a>
+                    </div>
+                </div>
+            </li>
+
+
+            <script type="text/javascript" src="~/js/script.js"></script>
+        </ul>
+
+        <div class="custom-shape-divider-top-1616611158">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+    </section>
+
+    <!--------------------------------ABOUT PAGE--------------------------------->
+    <section class="about-background">
+        <a href="#" name="about"><div class="circle-b"></div></a>
+
+
+        <div class="team-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-titlee text-center">
+                            <h2>ABOUT US</h2>
+                            <p>Meet our talented Team Members</p>
+                        </div>
+                    </div>
+
+                    <!--== FELIX DE GUZMAN ==-->
+                    <div class="col-md-3">
+                        <div class="single-team">
+                            <div class="team-img">
+                                <img src="https://i.ibb.co/9V6Fnvh/felix.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="team-content">
+                                <div class="team-info">
+                                    <h3>Felix De Guzman</h3>
+                                    <p>Front-End Developer</p>
+                                </div>
+                                <p class="team-text">deguzman.felixrafael@auf.edu.ph.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--== PATRIC IAN CORTEZ ==-->
+                    <div class="col-md-3">
+                        <div class="single-team">
+                            <div class="team-img">
+                                <img src="https://i.ibb.co/YWt1C0Y/patric.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="team-content">
+                                <div class="team-info">
+                                    <h3>Patric Ian Cortez</h3>
+                                    <p>Front-End Developer</p>
+                                </div>
+                                <p class="team-text">cortez.patrician@auf.edu.ph</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--== DANICA CALMA ==-->
+                    <div class="col-md-3">
+                        <div class="single-team">
+                            <div class="team-img">
+                                <img src="https://i.ibb.co/jRdFjr0/danica.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="team-content">
+                                <div class="team-info">
+                                    <h3>Danica Calma</h3>
+                                    <p>Back-End Developer</p>
+                                </div>
+                                <p class="team-text">calma.danica@auf.edu.ph</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--== AARON DELOSO ==-->
+                    <div class="col-md-3">
+                        <div class="single-team">
+                            <div class="team-img">
+                                <img src="https://i.ibb.co/HTCtpSL/deloso.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="team-content">
+                                <div class="team-info">
+                                    <h3>Aaron Chris Deloso</h3>
+                                    <p>Back-End Developer</p>
+                                </div>
+                                <p class="team-text">deloso.chrisaaron@auf.edu.ph</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--== WAVES ==-->
+
+        <div class="custom-shape-divider-top-1616609933">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <div class="custom-shape-divider-bottom-1616610071">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+    </section>
+
+
+    <!--------FOOTER ----------->
+
+
+    <div class="content1">
+
+    </div>
+    <footer>
+        <div class="main-content" >
+            <div class="left box"  style="border:3px solid white; ">
+                <h2>Suburban</h2>
+                <div class="content">
+                    <p>For the people, by the people.</p>
+                    <div class="social">
+                        <a href="https://www.facebook.com/sbrbn.co"><span class="fab fa-facebook-f"></span></a>
+                        <a href="#"><span class="fab fa-twitter"></span></a>
+                        <a href="https://www.instagram.com/suburban.clothing/?hl=en"><span class="fab fa-instagram"></span></a>
+                        <a href="https://www.youtube.com/results?search_query=suburban+clothing"><span class="fab fa-youtube"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center box"  style="border:3px solid white; ">
+                <h2>Address</h2>
+                <div class="content">
+                    <div class="place">
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="text">Angeles City, Pampanga</span>
+                    </div>
+                    <div class="phone">
+                        <span class="fas fa-phone-alt"></span>
+                        <span class="text">09976555864</span>
+                    </div>
+                    <div class="email">
+                        <span class="fas fa-envelope"></span>
+                        <span class="text">deguzman.felixrafael@auf.edu.ph</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right box"  style="border:3px solid white; ">
+                <h2>Contact us</h2>
+                <div class="content">
+                    <form action="#">
+                        <div class="email">
+                            <div class="text">Email *</div>
+                            <input type="email" required>
+                        </div>
+                        <div class="msg">
+                            <div class="text">Message *</div>
+                            <!-- <changeit rows="2" cols="25" required></changeit> -->
+                        </div>
+                        <div class="btn" style="left:120px;">
+                            <button type="submit" style="width:90px; height:30px;">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <center>
+                <span class="credit">Created By <a href="#">Suburban</a> | </span>
+                <span class="far fa-copyright"></span><span> 2020 All rights reserved.</span>
+            </center>
+        </div>
+    </footer>
+
+</body>
+
+</html>

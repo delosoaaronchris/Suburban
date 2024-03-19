@@ -1,0 +1,70 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/*-------------------Product CREATE CSS CODES--------------------*/
+
+.create-container {
+    border-radius: 40px;
+    width:70%;
+    margin:auto;
+}
+
+.container-header {
+    background-color: #fba520;
+    font-family: 'Poppins', sans-serif;
+    font-size: 33px;
+}
+
+.btn-formgroup{
+    margin-top: 3%;
+    margin-left: 73%;
+}
+
+.create-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    width: 80px;
+    padding: 5px;
+    background-color: #bd2000;
+    color:white;
+}
+
+.create-btn:hover{
+    background-color: white;
+    color: #bd2000;
+    border: 3px solid #bd2000;
+} 
+
+.back-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    background-color: #848484;
+    color: white;
+}
+
+.back-btn:hover{
+    background-color: white;
+    color:#848484;
+    border: 3px solid #848484;
+}
+
+.index-title {
+    font-family: 'Poppins', sans-serif;
+    text-align:center;
+    font-size:50px;
+}
+
+.add-account {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 5px;
+    color: white;
+    width: 120px;
+    background-color: #848484;
+}
+
+.add-account:hover{
+    background-color: white;
+    color:#848484;
+    border: 3px solid #848484;
+}

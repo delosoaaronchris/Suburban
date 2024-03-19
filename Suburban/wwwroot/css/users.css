@@ -1,0 +1,10 @@
+﻿.regbtn {
+    margin-top: 10px;
+    background-color: #83938f;
+}
+
+button regbtn:hover {
+    border: 2px solid #e66d1b;
+    background-color: white;
+    color:black;
+}

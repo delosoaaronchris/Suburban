@@ -1,0 +1,115 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: arial;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+nav img {
+    position: absolute;
+    margin-top: -15px;
+    width: 190px;
+    left: 57px;
+}
+
+nav {
+    height: 90px;
+    background-color: #3c3c3c;
+}
+
+nav ul {
+    float: left;
+    margin-left: 270px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    position: relative;
+    color: white;
+    padding: 5px 0;
+    right: 10px;
+}
+
+nav ul li a:hover {
+    text-transform: uppercase;
+    color:white;
+    text-decoration:none;
+}
+
+nav ul li a:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s linear;
+    top: 30px;
+}
+
+nav ul li a:hover:before {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+ nav ul li a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+nav button{
+    position:relative;
+    padding: 7px;
+    margin-top: 25px;
+    left: 55%;
+     
+    border-radius: 5px;
+    background-color: #c77a18;
+    border: none;
+    color: white;
+    font-size:17px;
+}
+
+button a:hover, button:hover {
+    background-color: #3c3c3c;
+    text-decoration: none;
+    color: black;
+}
+
+button:hover {
+    border: 2px solid white;
+}
+
+button a:visited {
+    color: white;
+    text-decoration: none;
+    
+}
+
+button a{
+    color: white;
+}
+
+.loginbtn:hover {
+    background-color: white;
+    color: #c77a18;
+    cursor:pointer;
+}
+
+.login:visited {
+    color: white;
+    text-decoration: none;
+}
